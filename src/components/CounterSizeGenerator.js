@@ -13,7 +13,7 @@ constructor (props){
 }
 //check if value first is < 0 then reset value
 onChange(event){
-    const value = event.target.value;
+    const value = event.target.value < 0 ? 0 : event.target.value;
     this.setState(()=> {return {size: value};}, 
     ()=>this.props.onGenerate(value));
 }
